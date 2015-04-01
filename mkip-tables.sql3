@@ -1,0 +1,20 @@
+/* mkip-table.sql3 -- How to run:
+sqlite3 ipvisitors.sqlite < mkiptbl.sql3*/
+
+ PRAGMA foreign_keys=OFF;
+ BEGIN TRANSACTION;
+
+ CREATE TABLE "Visitors" (
+   IP INT PRIMARY KEY     NOT NULL,
+   COUNTRY_CODE       CHAR(2) DEFAULT NULL,
+   COUNTRY_NAME       CHAR(25) DEFAULT NULL,
+   REGION_CODE        CHAR(16) DEFAULT NULL,
+   REGION_NAME        CHAR(16) DEFAULT NULL,
+   CITY               CHAR(16) DEFAULT NULL,
+   AREA_CODE          CHAR(16) DEFAULT NULL,
+   ZIPCODE            CHAR(16) DEFAULT NULL,
+   LATITUDE           CHAR(16) DEFAULT NULL,
+   LONGITUDE          CHAR(16) DEFAULT NULL,
+   METRO_CODE         CHAR(16) DEFAULT NULL
+);
+COMMIT;
